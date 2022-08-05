@@ -2,3 +2,5 @@ venv
 .idea
 __pycache__
 db.sqlite3
+ru.json
+eng.json

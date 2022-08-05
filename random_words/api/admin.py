@@ -7,5 +7,6 @@ from api.models import Word
 class WordsAdmin(admin.ModelAdmin):
     """Админ панель для модели слов."""
 
-    list_display = ['word', 'language']
+    list_display = ['id', 'word', 'language']
+    ordering = ['id']
     list_filter = ['language']
