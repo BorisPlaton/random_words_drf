@@ -18,7 +18,7 @@ class ExceptionMixin:
 def custom_exception_handler(exc, context):
     """
     Функция для отлавливания ошибок, которые вызываются
-    во `View`.
+    во `View`-классах.
     """
 
     def get_exception_text():

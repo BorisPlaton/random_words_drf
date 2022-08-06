@@ -5,7 +5,7 @@ from api.models import Word
 
 @admin.register(Word)
 class WordsAdmin(admin.ModelAdmin):
-    """Админ панель для модели слов."""
+    """Админ-панель для модели слов."""
 
     list_display = ['id', 'word', 'language']
     ordering = ['id']

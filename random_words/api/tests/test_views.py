@@ -1,6 +1,6 @@
 from parameterized import parameterized
 from rest_framework.reverse import reverse
-from rest_framework.test import APITestCase, APIRequestFactory
+from rest_framework.test import APITestCase
 from rest_framework.utils import json
 
 from api.models import Word

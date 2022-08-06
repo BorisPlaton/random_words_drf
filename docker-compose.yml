@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  random_words:
+    build: .
+    image: random_words_drf
+    ports:
+      - "8080:8000"
+    command: python random_words/manage.py runserver 0.0.0.0:8000

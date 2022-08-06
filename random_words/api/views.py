@@ -40,6 +40,7 @@ class WordsViewSet(ExceptionMixin, mixins.ListModelMixin, GenericViewSet):
         return Word.objects.filter(language=self.get_words_language())
 
     def get_response_dict(self) -> UserResponse:
+        """Возвращает словарь с данными для ответа пользователю."""
         words = self.get_words_list()
         quantity = words.count()
         data: UserResponse = {
