@@ -25,7 +25,7 @@ $ virtualenv venv
 $ . venv/bin/activate
 $ pip install -r requirements/dev.txt
 ```
-Запускаем на сервер на `8080` порту:
+Запускаем сервер на `8080` порту:
 ```
 $ python random_words/manage.py 8080
 ```
