@@ -5,7 +5,6 @@ ENV PYTHONDONTWRITEBYTECODE=1
 
 WORKDIR /random_words
 
-COPY requirements/prod.txt .
-RUN pip install --no-cache-dir -r prod.txt && rm -f prod.txt
-
 COPY . .
+RUN pip install --no-cache-dir -r requirements/prod.txt && \
+    rm -rf requirements
