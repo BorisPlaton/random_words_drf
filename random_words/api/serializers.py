@@ -4,7 +4,7 @@ from api.models import Word
 
 
 class WordSerializer(serializers.ModelSerializer):
-    """Сериализатор для модели слов."""
+    """The serializer for the `Word` model."""
 
     class Meta:
         model = Word
@@ -12,8 +12,11 @@ class WordSerializer(serializers.ModelSerializer):
 
 
 class WordListSerializer(serializers.Serializer):
-    """Сериализатор для ответа пользователю на его запрос."""
+    """
+    The serializer for response on user's request to get
+    a words list.
+    """
 
-    language = serializers.CharField(max_length=3)
+    language = serializers.CharField()
     quantity = serializers.IntegerField()
-    words = serializers.ListField(child=serializers.CharField())
+    words = WordSerializer(many=True)
