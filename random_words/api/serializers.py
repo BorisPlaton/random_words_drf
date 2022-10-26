@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from api.models import Word
+from api.services import UserWordsResponse
 
 
 class WordSerializer(serializers.ModelSerializer):
@@ -18,5 +19,9 @@ class WordListSerializer(serializers.Serializer):
     """
 
     language = serializers.CharField()
-    quantity = serializers.IntegerField()
+    quantity = serializers.SerializerMethodField()
     words = WordSerializer(many=True)
+
+    def get_quantity(self, obj: UserWordsResponse) -> int:
+        """Returns words amount."""
+        return obj['words'].count()

@@ -11,7 +11,10 @@ def get_random_words(words_amount: int, language: str) -> QuerySet[Word]:
     a length of sequence and a words' language.
     """
     words = get_words_of_language(language)
-    id_list = random.sample(list(words.values_list('id', flat=True)), words_amount)
+    try:
+        id_list = random.sample(list(words.values_list('id', flat=True)), words_amount)
+    except ValueError:
+        return words
     return words.filter(id__in=id_list)
 
 

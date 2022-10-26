@@ -8,12 +8,14 @@ venv
 requirements/*
 !requirements/prod.txt
 
-**/.coveragerc
+random_words/pytest.ini
+random_words/.env.dist
+random_words/.coveragerc
+
+**/.pytest_cache
 **/.coverage
 **/.idea
-**/.env.dist
-**/eng.json
-**/ru.json
+**/fixtures
 **/__pycache__
 **/tests
 **/migrations
