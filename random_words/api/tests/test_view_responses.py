@@ -57,3 +57,9 @@ class TestViews:
         res = client.get(reverse('words-list') + '?quantity=100')
         assert res.data['quantity'] == 5
         assert len(res.data['words']) == 5
+
+    def test_response_returns_list_with_strings(self, client):
+        baker.make(Word, language='ru', _quantity=5)
+        res = client.get(reverse('words-list') + '?quantity=100')
+        for word in res.data['words']:
+            assert isinstance(word, str)

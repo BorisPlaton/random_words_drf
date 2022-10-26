@@ -20,8 +20,12 @@ class WordListSerializer(serializers.Serializer):
 
     language = serializers.CharField()
     quantity = serializers.SerializerMethodField()
-    words = WordSerializer(many=True)
+    words = serializers.SerializerMethodField()
 
     def get_quantity(self, obj: UserWordsResponse) -> int:
         """Returns words amount."""
         return obj['words'].count()
+
+    def get_words(self, obj: UserWordsResponse) -> list[str]:
+        """Returns list of words."""
+        return [word.word for word in obj.words.all()]
