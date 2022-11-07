@@ -1,21 +1,18 @@
 setup.cfg
 .gitignore
 .git
+.env.dist
 README.md
 Dockerfile
 docker-compose.yml
 venv
-requirements/*
-!requirements/prod.txt
 
 random_words/pytest.ini
-random_words/.env.dist
 random_words/.coveragerc
+random_words/db.sqlite3
 
 **/.pytest_cache
 **/.coverage
 **/.idea
-**/fixtures
 **/__pycache__
 **/tests
-**/migrations

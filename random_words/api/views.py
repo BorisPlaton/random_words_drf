@@ -7,7 +7,7 @@ from api.services import get_words_user_response, validate_words_language
 
 
 class WordsViewSet(mixins.ListModelMixin, GenericViewSet):
-    """The `ViewSet` for retrieving words records."""
+    """Returns words of the specific language."""
 
     serializer_class = WordListSerializer
 

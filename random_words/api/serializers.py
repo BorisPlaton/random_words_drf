@@ -1,3 +1,5 @@
+import random
+
 from rest_framework import serializers
 
 from api.models import Word
@@ -27,5 +29,7 @@ class WordListSerializer(serializers.Serializer):
         return obj['words'].count()
 
     def get_words(self, obj: UserWordsResponse) -> list[str]:
-        """Returns list of words."""
-        return [word.word for word in obj.words.all()]
+        """Returns list of words and randomize them."""
+        sorted_words_list = [word.word for word in obj.words.all()]
+        random.shuffle(sorted_words_list)
+        return sorted_words_list
